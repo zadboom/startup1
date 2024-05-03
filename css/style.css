@@ -6,7 +6,7 @@
 
 html,
 body {
-  height: 100%;
+  direction: ltr;
 }
 
 body {
@@ -81,9 +81,6 @@ input:focus {
   clear: both;
 }
 
-#content {
-  padding: 10px;
-}
 #header-wrapper {
   background-color: #f2f2f2;
   position: fixed;
@@ -100,6 +97,10 @@ input:focus {
   left: 20px;
 }
 
+#content {
+  padding: 10px;
+  margin-top: 60px;
+}
 .profile-image {
   border-radius: 100px;
 
