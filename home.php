@@ -13,18 +13,20 @@ if(!$isguest){
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
+<meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>HomePage</title>
+    <title>Home page</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     
-    <link rel='stylesheet' type='text/css' media='screen' href='css/base.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
-    
+    <link rel="stylesheet" type="text/css" href="base.css" media="screen"/>
+
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+
+       
 </head>
 <body>
     <div id="header-wrapper">
-       <div id=#header-top-left> 
+       <div id="header-top-left"> 
         <?if($isguest){?>
         <img class="profile-image" src="images/profile-22.png">
         <span style="margin-left: 5px;"><?=_header_guest?><?=_header_wellcome?></span>
@@ -32,35 +34,39 @@ if(!$isguest){
         <?}else{?>
         <img class="profile-image" src="images/profile-22.png">
         <span style="margin-left: 5px;"><?=$_SESSION['email']?><?=_header_wellcome?></span>
-        <a id="#link" style="margin-left: 5px;text-decoration:none;" class="btn-blue" href="logout.php"><?=_btn_logout?></a>
+        <a id="link" style="margin-left: 5px;text-decoration:none;" class="btn-blue" href="logout.php"><?=_btn_logout?></a>
         <?}?>
         </div>
     </div>
+   
 
-    <div id="content">
+    <div id="content" >
         <?if($isguest){?>
-           <div style="margin-top: 60px; text-align: center; color: #f40; font-size: 20px;">
+           <div class="tac lf important-color m15tb ">
            <span>You need to Login in the system to fully use the system!</span>
-           </div>
+            </div>
           
        <?}else{?>
-        <ul class="todo-entry">
-            <li>Title</li>
-            <li>Description</li>
-            <li>Time</li>
+        
+       
+        <ul  class="todo-entry">
+            <li >Title</li>
+            <li >Description</li>
+            <li >Time</li>
 
         </ul>
            <?foreach ($records as $record) {?>
-        <ul class="todo-entry">
-            <li><?=$record['title']?></li>
-            <li><?=$record['description']?></li>
-            <li><?=$record['eventTime']?></li>
+              <ul class="todo-entry"  >
+                 <li ><?=$record['title']?></li>
+                 <li ><?=$record['description']?></li>
+                 <li ><?=$record['eventTime']?></li>
 
-        </ul>
+            </ul>
 
             <?}?>
         <? }?> 
-
-    </div>
+    
+           
+        </div>
 </body>
 </html>
