@@ -24,6 +24,13 @@ function dump($var,$return=false){
     echo "<hr>\n";
     }
    }
+   function br($return=false){
+    if($return){
+      return "<br>\n";
+    }else{
+    echo "<br>\n";
+    }
+   }
    function getCurentDateTime(){
    return date("y-m-d H:i:s");
    }

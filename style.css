@@ -128,6 +128,12 @@ textarea:focus {
   background-color: rgba(255, 0, 0, 0.2);
 }
 */
+.todo-entry.done {
+  background: rgba(0, 255, 0, 0.2);
+}
+.todo-entry.pending {
+  background: rgba(255, 0, 0, 0.2);
+}
 .todo-entry li {
   display: inline-block;
   border-left: 1px solid #888;
@@ -135,12 +141,6 @@ textarea:focus {
   padding: 7px 10px;
 }
 
-.todo-entry:nth-child(odd) {
-  background: rgba(127, 127, 127, 0.35);
-}
-.todo-entry:nth-child(even) {
-  background: rgba(127, 127, 127, 0.65);
-}
 .todo-entry:nth-child(1) {
   background: rgba(127, 127, 255, 0.65);
 }
@@ -150,23 +150,25 @@ textarea:focus {
 }
 
 .todo-entry li:nth-child(1) {
-  width: 30%;
+  width: 30px;
+  max-width: 30px;
+  min-width: 30px;
 }
 
 .todo-entry li:nth-child(2) {
-  width: 70%;
+  width: 30%;
 }
 
 .todo-entry li:nth-child(3) {
+  width: 70%;
+}
+
+.todo-entry li:nth-child(4) {
   width: 140px;
   max-width: 140px;
   text-align: center;
 }
-
-/*.todo-entry li:nth-child(4) {
-  width: 70%;
-}
-
+/*
 .todo-entry li:nth-child(5) {
   width: 140px;
   min-width: 140px;

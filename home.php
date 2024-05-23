@@ -50,16 +50,28 @@ if(!$isguest){
         
        
         <ul  class="todo-entry">
+            <li >Done</li>
             <li >Title</li>
             <li >Description</li>
             <li >Time</li>
+           
 
         </ul>
-           <?foreach ($records as $record) {?>
-              <ul class="todo-entry"  >
+           <?foreach ($records as $record) {
+            if($record['isDone']){
+                $doneClass="done";
+             } else{
+                $doneClass="pending";
+                }
+            
+           ?>
+              <ul class="todo-entry  <?=$doneClass?>">
+                 <li ><a class="btn" href="done.php?id=<?=$record['note_id']?>">*</a></li>
                  <li ><?=$record['title']?></li>
                  <li ><?=$record['description']?></li>
                  <li ><?=$record['eventTime']?></li>
+                
+                 
 
             </ul>
 
