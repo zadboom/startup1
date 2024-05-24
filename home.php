@@ -51,12 +51,14 @@ if(!$isguest){
        
         <ul  class="todo-entry">
             <li >Done</li>
+            <li>Delete</li>
             <li >Title</li>
             <li >Description</li>
             <li >Time</li>
            
 
         </ul>
+        <?if ($records==null){$records=array();}?>
            <?foreach ($records as $record) {
             if($record['isDone']){
                 $doneClass="done";
@@ -67,6 +69,7 @@ if(!$isguest){
            ?>
               <ul class="todo-entry  <?=$doneClass?>">
                  <li ><a class="btn" href="done.php?id=<?=$record['note_id']?>">*</a></li>
+                 <li ><a class="btn" href="remove.php?id=<?=$record['note_id']?>">-</a></li>
                  <li ><?=$record['title']?></li>
                  <li ><?=$record['description']?></li>
                  <li ><?=$record['eventTime']?></li>
@@ -76,7 +79,12 @@ if(!$isguest){
             </ul>
 
             <?}?>
-        <? }?> 
+            
+            <div class="tac m15tb">
+            <a class="btn-blue" href="new.php">Create</a>
+            </div>
+        <? }?>
+       
     
            
         </div>

@@ -44,9 +44,11 @@ $this->connection->query("SET NAMES 'utf8'");
        return $records[0];
     }
 //////////////////////////
+public function modify($sql){
+    $rowsAfected=$this->connection->query($sql);
+    return $rowsAfected;
 
-
-
+}
 //insert into DB
 public function insert($sql){
     $id=$this->connection->query($sql);

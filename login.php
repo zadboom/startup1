@@ -14,9 +14,9 @@ if(isset($_SESSION['email'])){
     <title>Login page</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     
-    <link rel="stylesheet" type="text/css" href="css/base.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="base.css" media="screen"/>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
 
 
          

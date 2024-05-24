@@ -9,10 +9,14 @@ define('_password_weak','strong password not enought');
 define('_password_notmatch','passwords arent strong enought');
 define('_successfuly_registerd',"You are successfuly registered . please".'<a href="login.php"> login</a>');
 define('_header_guest','GuestUser');
+define('_title','title');
+define('_description','description');
+
 
 define('_btn_register','Register');
 define('_btn_login','Login');
 define('_btn_logout','Logout');
+define('_btn_create','create');
 define('_btn_signup','CreatNewAccount');
 define('_ph_email','EmailAddress');
 define('_ph_password','password');
