@@ -32,6 +32,7 @@ class Db{
     echo ("Connection failed: " . $this->connection->connect_error);
     exit;
 }
+
 $this->connection->query("SET NAMES 'utf8'");
 
     }
@@ -45,18 +46,32 @@ $this->connection->query("SET NAMES 'utf8'");
     }
 //////////////////////////
 public function modify($sql){
-    $rowsAfected=$this->connection->query($sql);
-    return $rowsAfected;
+    $result=$this->connection->query($sql);
+    if (!$result){
+        echo "Query".$sql."fail due to ".mysqli_error($this->connection);
+        exit;
+        }
+    return $result;
 
 }
 //insert into DB
 public function insert($sql){
-    $id=$this->connection->query($sql);
-    return $id;
+    $result=$this->connection->query($sql);
+    if (!$result){
+        echo "Query".$sql."fail due to ".mysqli_error($this->connection);
+        exit;
+        }
+    return $result;
 }
 ///End of insert function
 public function query($sql){
         $result=$this->connection->query($sql);
+       if (!$result){
+        echo "Query".$sql."fail due to ".mysqli_error($this->connection);
+        exit;
+        }
+        
+
         $records=array();
         if ($result->num_rows == 0) {
             return null;
